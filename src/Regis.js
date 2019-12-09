@@ -39,7 +39,7 @@ export default class Regis extends Component{
                                 </div>
                                 <div>
                                   <p style={{padding:"20px"}}>
-                                    <b style={{fontSize:"14px"}}>Already have an account ?</b> <Link to="#" style={{color:'green'}}>Sign in</Link>
+                                    <b style={{fontSize:"14px"}}>Already have an account ?</b> <Link to="/Login" style={{color:'green'}}>Sign in</Link>
                                   </p>
                                 </div>
                                 <div>
