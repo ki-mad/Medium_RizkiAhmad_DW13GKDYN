@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.menu-item {
+  padding: 10px 20px;
+  margin: 0px 2px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  color: gray;
+}
+.menu-item-wrapper.active {
+  border: none;
+}
+.menu-item.active {
+  color: black;
+}
+ 
+.scroll-menu-arrow {
+  padding: 30px;
+  cursor: pointer;
+}

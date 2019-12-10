@@ -31,10 +31,10 @@ export default class Regis extends Component{
     onSubmit(e) {
         e.preventDefault()
 
-        this.state = {
+        this.setState({
             email:'',
             password:''
-        }
+        })
     }
 
     // React Life Cycle

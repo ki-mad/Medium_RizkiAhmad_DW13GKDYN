@@ -44,7 +44,7 @@ export default class Regis extends Component{
                                 </div>
                                 <div>
                                   <p style={{color:'gray', fontSize:"12px"}}>
-                                    To make Medium work, we log user data and share it with service providers. Clik "Sign Up" above to accept Medium <a href="#" style={{color:'gray'}}><u>Terms of Service</u></a> & <a href="#" style={{color:'gray'}}><u>Privacy police</u></a> 
+                                    To make Medium work, we log user data and share it with service providers. Clik "Sign Up" above to accept Medium <Link to="#" style={{color:'gray'}}><u>Terms of Service</u></Link> & <Link to="#" style={{color:'gray'}}><u>Privacy police</u></Link> 
                                   </p>
                                 </div>
                               </div>
