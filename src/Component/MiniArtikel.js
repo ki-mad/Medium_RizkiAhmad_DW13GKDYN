@@ -8,7 +8,7 @@ export default class MiniArtikel extends Component{
                 <Item>
                     <Item.Image size='tiny' src={this.props.img} />
 
-                    <Item.Content>
+                    <Item.Content style={{textAlign:"left"}}>
                         <Item.Header as='a' style={{fontSize:"16px"}}>{this.props.title}</Item.Header>
                         <Item.Description>
                             <div>

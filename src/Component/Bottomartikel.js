@@ -15,7 +15,7 @@ export default class Bottomartikel extends Component {
                     <Item.Extra>{this.props.waktu}</Item.Extra>
                 </Item.Content>
 
-                <Item.Image size='small' src={this.props.img}/>
+                <Item.Image src={this.props.img}/>
             </Item>
         );
     }

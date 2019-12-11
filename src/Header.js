@@ -12,7 +12,7 @@ export default class Header extends Component{
           )
 
          return(
-            <Container className="Header">
+            <Container>
                 <Grid >
                     <Grid.Column>
                         <Menu secondary>

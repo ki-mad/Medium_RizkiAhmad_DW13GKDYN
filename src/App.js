@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 // import { render } from '@testing-library/react';
-// import Regis from './Regis';
-// import Login from './Login';
 import Home from './Home';
 // import logo from './logo.svg';
 // import './App.css';
+import CategoryPage from './CategoryPage';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Home/>
+        {/* <Home/> */}
+        <CategoryPage/>
       </div>
     );
   }

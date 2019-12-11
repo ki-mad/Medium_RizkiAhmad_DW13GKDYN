@@ -143,11 +143,10 @@ export default class Content extends Component {
                 waktu : "Dec 4 - 28 min read"
             }
         ]
-        
 
         return(
             <div>
-                <Grid divided='vertically' columns={3} style={{paddingLeft:"15%", paddingRight:"15%", height:"350px"}}>
+                <Grid columns={3} style={{paddingLeft:"15%", paddingRight:"15%", height:"350px"}}>
                     <Grid.Row stretched>
                         <Grid.Column>
                             <article>
@@ -277,6 +276,7 @@ export default class Content extends Component {
                                         </Sticky>
                                       </Rail>
                                     </Ref>
+                                    
                                   </Grid.Row>
                                 </Grid.Column>
                                 <Grid.Column width={10}>

@@ -4,7 +4,7 @@ import './App.css';
 
 const list = [
     { name: 'HOME'},
-    { name: 'ONEZERO'}, 
+    { name: 'ONEZERO', url:'/CategoryPage'}, 
     { name: 'ELEMENTAL'},
     { name: 'GEN'}, 
     { name: 'ZORA'}, 
