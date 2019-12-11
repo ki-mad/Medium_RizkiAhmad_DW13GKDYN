@@ -56,6 +56,15 @@ export default class Login extends Component{
     componentWillUpdate(nextProps, nextState) {
         localStorage.setItem('user', JSON.stringify(nextState));
     }
+    state = { show: false };
+
+    showModal = () => {
+        this.setState({ show: true });
+    };
+
+    hideModal = () => {
+        this.setState({ show: false });
+    };
 
      render() {
          return(
@@ -83,7 +92,7 @@ export default class Login extends Component{
                                 </div>
                                 <div>
                                   <p style={{padding:"15px"}}>
-                                    <Link to="/Regis" style={{color:'green'}}><Icon name='angle left' />All Sign in options</Link>
+                                    <Link to="/Home" style={{color:'green'}} onClick={this.hideModal}><Icon name='angle left' />All Sign in options</Link>
                                   </p>
                                 </div>
                               </div>

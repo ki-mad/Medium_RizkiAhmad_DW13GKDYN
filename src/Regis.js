@@ -5,6 +5,15 @@ import {Link} from 'react-router-dom';
 import Login from './Login'
 
 export default class Regis extends Component{
+  state = { show: false };
+
+  showModal = () => {
+      this.setState({ show: true });
+  };
+
+  hideModal = () => {
+      this.setState({ show: false });
+  };
 
      render() {
          return(
@@ -42,7 +51,7 @@ export default class Regis extends Component{
                                 </div>
                                 <div>
                                   <p style={{padding:"20px"}}>
-                                    <b style={{fontSize:"14px"}}>Already have an account ?</b> <Login/>
+                                    <b style={{fontSize:"14px"}}>Already have an account ?</b> <p onClick={this.hideModal}><Login/></p>
                                   </p>
                                 </div>
                                 <div>

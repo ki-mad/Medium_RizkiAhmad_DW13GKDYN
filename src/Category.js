@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import './App.css';
+import {Link} from 'react-router-dom';
 
 const list = [
-    { name: 'HOME'},
+    { name: 'HOME', url:'/Home'},
     { name: 'ONEZERO', url:'/CategoryPage'}, 
-    { name: 'ELEMENTAL'},
-    { name: 'GEN'}, 
-    { name: 'ZORA'}, 
-    { name: 'FORGE'},
-    { name: 'HUMAN'}, 
-    { name: 'PARTS'}, 
-    { name: 'MARKER'},
-    { name: 'LEVEL'}, 
-    { name: 'HEATED'}, 
-    { name: 'MODUS'}, 
-    { name: 'MORE'}
+    { name: 'ELEMENTAL', url:'/Regis'},
+    { name: 'GEN', url:'/'}, 
+    { name: 'ZORA', url:'/'}, 
+    { name: 'FORGE', url:'/'},
+    { name: 'HUMAN', url:'/'}, 
+    { name: 'PARTS', url:'/'}, 
+    { name: 'MARKER', url:'/'},
+    { name: 'LEVEL', url:'/'}, 
+    { name: 'HEATED', url:'/'}, 
+    { name: 'MODUS', url:'/'}, 
+    { name: 'MORE', url:'/'}
 ];
 
 const MenuItem = ({text, selected}) => {
@@ -26,8 +27,9 @@ const MenuItem = ({text, selected}) => {
 
 export const Menu = (list, selected) => list.map(el => {
     const {name} = el;
+    const {url} = el;
 
-    return <MenuItem text={name} key={name} selected={selected}></MenuItem>;
+    return <Link to={url}><MenuItem text={name} key={name} selected={selected}></MenuItem></Link>;
 });
 
 const Arrow = ({ text, className}) => {
