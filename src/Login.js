@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-// import {Modal, Backdrop, Fade, TextField} from '@material-ui/core'
 import {Link} from 'react-router-dom';
 import { Button, Form, Modal, Icon} from 'semantic-ui-react'
 
-export default class Regis extends Component{
+export default class Login extends Component{
 
     userData;
 
@@ -60,7 +59,7 @@ export default class Regis extends Component{
 
      render() {
          return(
-          <Modal size="small" trigger={<Button >Try me Login</Button>} closeIcon>
+          <Modal trigger={<Link>Sign in</Link>} closeIcon>
                   <div >
                       <div style={style.flex}>
                           <div style={style.midflex}>
@@ -120,7 +119,8 @@ const style ={
         paddingTop : "30px",
         paddingBottom: "44px",
         paddingRight: "56px",
-        paddingLeft: "56px"
+        paddingLeft: "56px",
+        height: "550px"
     }
 
 };

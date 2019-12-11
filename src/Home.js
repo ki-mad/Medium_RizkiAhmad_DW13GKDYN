@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import { Container,Image} from 'semantic-ui-react'
+import { Container} from 'semantic-ui-react'
 import Category from './Category';
 import Header from './Header';
 import Content from './Content';
+
 export default class Home extends Component{
 
      render() {
@@ -13,7 +14,7 @@ export default class Home extends Component{
                     <Category/>
                 </Container>
                 <Container fluid>
-                    {/* <Content/> */}
+                    <Content/>
                 </Container>
              </div>
          );

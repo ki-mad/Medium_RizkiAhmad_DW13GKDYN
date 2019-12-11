@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Menu, Input, Button, Icon, Grid, Container, Dropdown, Image} from 'semantic-ui-react'
+import { Menu, Input, Icon, Grid, Container, Dropdown, Image} from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
+import Regis from './Regis';
 
 export default class Header extends Component{
     render() {
@@ -30,7 +31,7 @@ export default class Header extends Component{
                                     </div>
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <Button basic color='black'>Get Started</Button>
+                                    <Regis/>
                                 </Menu.Item>
                                 <Menu.Item>
                                     <Dropdown 

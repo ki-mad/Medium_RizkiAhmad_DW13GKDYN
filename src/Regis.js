@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 // import {Modal, Backdrop, Fade, TextField} from '@material-ui/core'
 import { Button, Form, Modal} from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
+import Login from './Login'
 
 export default class Regis extends Component{
 
      render() {
          return(
-          <Modal trigger={<Button>Try me Registrasi</Button>} closeIcon>
+          <Modal trigger={<Button basic color='black'>
+          Sign in
+        </Button>} closeIcon>
                   <div >
                       <div style={style.flex}>
                           <div style={style.side}>
@@ -39,7 +42,7 @@ export default class Regis extends Component{
                                 </div>
                                 <div>
                                   <p style={{padding:"20px"}}>
-                                    <b style={{fontSize:"14px"}}>Already have an account ?</b> <Link to="/Login" style={{color:'green'}}>Sign in</Link>
+                                    <b style={{fontSize:"14px"}}>Already have an account ?</b> <Login/>
                                   </p>
                                 </div>
                                 <div>

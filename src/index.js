@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Regis from './Regis';
 import Login from './Login';
+import Home from './Home';
 import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
@@ -14,6 +15,7 @@ ReactDOM.render(
             <Route exact path="/" component={App} />
             <Route exact path="/Regis" component={Regis} />
             <Route exact path="/Login" component={Login} />
+            <Route exact path="/Home" component={Home} />
         </div>
     </Router>
 ,document.getElementById('root'));
