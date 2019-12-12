@@ -1,5 +1,5 @@
-import React, {Component, createRef} from 'react';
-import {Icon, Grid,Image, Sticky, Ref, Rail , Item, Container, Divider, List, GridColumn, Button, Segment} from 'semantic-ui-react';
+import React, {Component} from 'react';
+import {Grid,Image} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 export default class CategoryMid extends Component {
     render() {

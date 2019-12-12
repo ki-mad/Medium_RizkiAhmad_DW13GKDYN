@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Item, Grid, Divider, Image} from 'semantic-ui-react'
+import {Item, Grid, Divider} from 'semantic-ui-react'
 
 export default class CategoryArtikel extends Component {
     render(){

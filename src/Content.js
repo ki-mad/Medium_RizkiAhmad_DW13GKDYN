@@ -3,6 +3,7 @@ import {Icon, Grid,Image, Sticky, Ref, Rail , Item, Container, Divider, List} fr
 import MiniArtikel from './Component/MiniArtikel';
 import Bottomartikel from './Component/Bottomartikel';
 import Popular from './Component/Popular';
+import {Link} from 'react-router-dom';
 
 export default class Content extends Component {
     contextRef = createRef()
@@ -151,13 +152,13 @@ export default class Content extends Component {
                         <Grid.Column>
                             <article>
                                 <div className="Artikel1">
-                                    <Image src="https://cdn-images-1.medium.com/focal/416/151/49/43/1*V7Si4unlnDsQ03Hg674y_A.jpeg"></Image>
+                                    <Image src="https://miro.medium.com/max/2000/1*-T8oo_JoKkMxfnPKLt_Ciw.jpeg" height="155vh" width="400vh"></Image>
                                 </div>
                                 <div className="postContent" style={{textAlign:"left", marginLeft:"88px"}}>
                                     <div className="titleClamp" >
-                                        <a href="#">
-                                            <h3 style={{color:"black", fontSize:"22px"}}>The Joy of Being an Untethered Woman</h3>
-                                        </a>
+                                        <Link to="/ArticlePage">
+                                            <h3 style={{color:"black", fontSize:"22px"}}>If You Only Read A Few Books In 2018, Read These</h3>
+                                        </Link>
                                         <a href="#" style={{color:"gray", lineHeight:"28px"}}>
                                             <div >
                                                 On sex, solitude, and female friendship

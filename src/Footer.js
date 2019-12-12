@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import { Grid, Container, List, Divider} from 'semantic-ui-react'
-import {Link} from 'react-router-dom';
-import Regis from './Regis';
 
 export default class Footer extends Component {
     render(){

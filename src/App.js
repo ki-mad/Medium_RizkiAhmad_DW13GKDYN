@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Home from './Home';
 // import logo from './logo.svg';
 // import './App.css';
-import CategoryPage from './CategoryPage';
+
 
 
 class App extends Component {

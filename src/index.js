@@ -6,6 +6,7 @@ import Regis from './Regis';
 import Login from './Login';
 import Home from './Home';
 import CategoryPage from './CategoryPage';
+import ArticlePage from './ArticlePage';
 import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
@@ -18,6 +19,7 @@ ReactDOM.render(
             <Route path="/Login" component={Login} />
             <Route path="/Home" component={Home} />
             <Route path="/CategoryPage" component={CategoryPage} />
+            <Route path="/ArticlePage" component={ArticlePage}/>
         </div>
     </Router>
 ,document.getElementById('root'));
