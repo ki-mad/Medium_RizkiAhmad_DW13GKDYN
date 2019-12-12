@@ -3,6 +3,7 @@ import { Container, Grid, Menu,Responsive, Image, List, Divider} from 'semantic-
 import Header from './Header';
 import {Link} from 'react-router-dom';
 import ArticleContent from './Component/ArticleContent';
+import Follow from './Component/Follow';
 
 export default class ArticlePage extends Component{
 
@@ -10,30 +11,33 @@ export default class ArticlePage extends Component{
          return(
             <div>
                  <Container fluid  >
-                     <div style={{boxShadow:"rgba(0, 0, 0, 0.05) 0px 4px 12px 0px"}}>
+                     <div >
                         <Header/>
                         <Divider/>
-                        <Container>
-                            <Responsive>
-                                <Grid >
-                                    <Grid.Column>
-                                        <Menu secondary compact>
-                                            <Menu.Menu>
-                                                <Menu.Item>
-                                                    <Link><Image alt="Mission.org" class="" src="https://miro.medium.com/max/432/1*IPEsgX_bZKP_7OubdnI7-Q.png" width="216" height="36"></Image></Link>
-                                                </Menu.Item>
-                                            </Menu.Menu>
-                                        </Menu>
-                                        <List celled horizontal>
-                                                    <List.Item><Link style={{color:"gray"}}>MISSION ORIGINAL</Link></List.Item>
-                                                    <List.Item><Link style={{color:"gray"}}>SUBSCRIBE</Link></List.Item>
-                                        </List>
-                                    </Grid.Column>
-                                </Grid>
-                            </Responsive>
-                        </Container>
+                        <div style={{boxShadow:"rgba(0, 0, 0, 0.05) 0px 4px 12px 0px"}}>
+                            <Container>
+                                <Responsive>
+                                    <Grid >
+                                        <Grid.Column>
+                                            <Menu secondary compact>
+                                                <Menu.Menu>
+                                                    <Menu.Item>
+                                                        <Link><Image alt="Mission.org" class="" src="https://miro.medium.com/max/432/1*IPEsgX_bZKP_7OubdnI7-Q.png" width="216" height="36"></Image></Link>
+                                                    </Menu.Item>
+                                                </Menu.Menu>
+                                            </Menu>
+                                            <List celled horizontal>
+                                                        <List.Item><Link style={{color:"gray"}}>MISSION ORIGINAL</Link></List.Item>
+                                                        <List.Item><Link style={{color:"gray"}}>SUBSCRIBE</Link></List.Item>
+                                            </List>
+                                        </Grid.Column>
+                                    </Grid>
+                                </Responsive>
+                            </Container>
+                        </div>
                         <Container>
                             <ArticleContent/>
+                            <Follow/>
                         </Container>
                      </div>
                  </Container>
