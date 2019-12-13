@@ -31,25 +31,24 @@ export default class ArticleContent extends Component {
                    
                     <Grid style={{marginLeft:"18%", marginRight:"18%"}}>
                         <Grid.Row>
-                               
-                                    <Grid.Column width={2}>
-                                        <Image avatar size="small" src="https://miro.medium.com/fit/c/96/96/0*oxw8NBp_Td0n3l4_.png"></Image>
-                                    </Grid.Column>
-                                    <Grid.Column width={6}>
-                                        <div style={{fontWeight:"40"}}>
-                                            Ryan Holiday <span style={{paddingLeft:"20px"}}><Button basic color="green" size="mini" >Follow</Button></span>
-                                        </div>
-                                        <div style={{color:"gray"}}>
-                                            Jun 26 2018 - 10 min read
-                                        </div>
-                                    </Grid.Column>
-                                    <Grid.Column width={5} floated="right" style={{alignContent:"bottom", paddingTop:"20px", marginBottom:"20px"}}>
-                                        <div style={{float:"right", alignContent:"bottom"}}>
-                                            <Link><Icon  name="twitter"></Icon></Link>
-                                            <Link> <Icon name="facebook"></Icon></Link>
-                                            <Link style={{color:"black"}}><Icon  name="bookmark"></Icon></Link>
-                                        </div>
-                                    </Grid.Column>
+                                <Grid.Column width={2}>
+                                    <Image avatar size="small" src="https://miro.medium.com/fit/c/96/96/0*oxw8NBp_Td0n3l4_.png"></Image>
+                                </Grid.Column>
+                                <Grid.Column width={6}>
+                                    <div style={{fontWeight:"40"}}>
+                                        Ryan Holiday <span style={{paddingLeft:"20px"}}><Button basic color="green" size="mini" >Follow</Button></span>
+                                    </div>
+                                    <div style={{color:"gray"}}>
+                                        Jun 26 2018 - 10 min read
+                                    </div>
+                                </Grid.Column>
+                                <Grid.Column width={5} floated="right" style={{alignContent:"bottom", paddingTop:"20px", marginBottom:"20px"}}>
+                                    <div style={{float:"right", alignContent:"bottom"}}>
+                                        <Link><Icon  name="twitter"></Icon></Link>
+                                        <Link> <Icon name="facebook"></Icon></Link>
+                                        <Link style={{color:"black"}}><Icon  name="bookmark"></Icon></Link>
+                                    </div>
+                                </Grid.Column>
                         </Grid.Row>
                     </Grid>
                 </Responsive>

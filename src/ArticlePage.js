@@ -4,6 +4,7 @@ import Header from './Header';
 import {Link} from 'react-router-dom';
 import ArticleContent from './Component/ArticleContent';
 import Follow from './Component/Follow';
+import RelatedArticle from './Component/RelatedArticle';
 
 export default class ArticlePage extends Component{
 
@@ -39,6 +40,7 @@ export default class ArticlePage extends Component{
                             <ArticleContent/>
                             <Follow/>
                         </Container>
+                        <RelatedArticle/>
                      </div>
                  </Container>
             </div>
