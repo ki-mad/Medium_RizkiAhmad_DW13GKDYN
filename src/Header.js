@@ -18,7 +18,7 @@ export default class Header extends Component{
                         <Menu secondary>
                             <Menu.Menu>
                                 <Menu.Item>
-                                    <h1 style={{fontFamily:"Marat Sans Semibold"}}>Medium</h1>
+                                    <Link to="/Home" style={{color:"black"}}><h1 style={{fontFamily:"Marat Sans Semibold"}}>Medium</h1></Link>
                                 </Menu.Item>
                             </Menu.Menu>
                             <Menu.Menu position='right'>

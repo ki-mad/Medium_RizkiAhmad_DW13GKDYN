@@ -18,7 +18,7 @@ export default class Regis extends Component{
      render() {
          return(
           <Modal trigger={<Button basic color='black'>
-          Sign in
+          Get Started
         </Button>} closeIcon>
                   <div >
                       <div style={style.flex}>

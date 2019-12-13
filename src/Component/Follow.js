@@ -68,7 +68,7 @@ export default class Follow extends Component {
                                 </Item>
                             </Item.Group>
                             </Grid.Column>
-                            <Responsive >
+                             <Responsive >
                                 <Grid.Column width={4}>
                                     <Button basic color="green" floated='right'>
                                             Follow
@@ -106,9 +106,12 @@ export default class Follow extends Component {
                            
                         </Grid.Row>
                         <Divider/>
-
-                        <Button size = "big" basic color="green" fluid>See responses (216) </Button>
-                        <Divider/>
+                        <Grid.Row>
+                            <Container fluid>
+                                <Link to="/Comment"><Button size = "big" basic color="green" fluid style={{fontSize:"14px", padding:"25px"}}>See responses (216) </Button> </Link>
+                            </Container>
+                        {/* <Button size = "big" basic color="green">See responses (216) </Button> */}
+                        </Grid.Row>
                     </Grid>
                    
                 </Container>

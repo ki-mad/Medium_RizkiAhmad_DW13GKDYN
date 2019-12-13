@@ -56,6 +56,7 @@ export default class Login extends Component{
     componentWillUpdate(nextProps, nextState) {
         localStorage.setItem('user', JSON.stringify(nextState));
     }
+    
     state = { show: false };
 
     showModal = () => {
