@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Menu, Input, Icon, Grid, Container, Dropdown, Image} from 'semantic-ui-react'
+import { Menu, Input, Icon, Grid, Container, Dropdown, Image, Item} from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
 import Regis from './Regis';
 
@@ -34,13 +34,31 @@ export default class Header extends Component{
                                     <Regis/>
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <Dropdown 
+                                    <Dropdown pointing
                                     trigger={trigger}
                                     icon={null}>
-                                        <Dropdown.Menu>
+                                        <Dropdown.Menu style={{marginRight:"-70px"}}>
                                             <Dropdown.Item>
-                                                <Image avatar src="https://s3.amazonaws.com/uifaces/faces/twitter/yesmeck/128.jpg" size="mini"/>
+                                                <Item.Group>
+                                                    <Item floated="Left">
+                                                        <Item.Image size='mini' avatar src='https://s3.amazonaws.com/uifaces/faces/twitter/yesmeck/128.jpg' />
+                                                        <Item.Content>
+                                                            <Item.Header as='a' style={{fontSize:"14px"}}>Medium</Item.Header>
+                                                            <Item.Description content="blablabla" />
+                                                        </Item.Content>
+                                                    </Item>
+                                                </Item.Group>
                                             </Dropdown.Item>
+                                            <Dropdown.Item href="#" >Become a member</Dropdown.Item>
+                                            <Dropdown.Item href="NewStory" text='New Story'/>
+                                            <Dropdown.Item text='Story'/>
+                                            <Dropdown.Item text='Stats'/>
+                                            <Dropdown.Divider />
+                                            <Dropdown.Item text='Bookmarks'/>
+                                            <Dropdown.Item text='Profile'/>
+                                            <Dropdown.Item text='Setting'/>
+                                            <Dropdown.Item text='Help'/>
+                                            <Dropdown.Item text='Sign out'/>
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </Menu.Item>

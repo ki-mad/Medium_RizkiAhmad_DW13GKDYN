@@ -5,6 +5,7 @@ import App from './App';
 import Regis from './Regis';
 import Login from './Login';
 import Home from './Home';
+import NewStory from './Component/NewStory';
 import CategoryPage from './CategoryPage';
 import ArticlePage from './ArticlePage';
 import CommentArticle from './Component/Comment';
@@ -22,6 +23,7 @@ ReactDOM.render(
             <Route path="/CategoryPage" component={CategoryPage} />
             <Route path="/ArticlePage" component={ArticlePage}/>
             <Route path="/Comment" component={CommentArticle}/>
+            <Route path="/NewStory" component={NewStory}/>
         </div>
     </Router>
 ,document.getElementById('root'));
