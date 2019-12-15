@@ -36,7 +36,8 @@ export default class Header extends Component{
                                 <Menu.Item>
                                     <Dropdown pointing
                                     trigger={trigger}
-                                    icon={null}>
+                                    icon={null}
+                                    >
                                         <Dropdown.Menu style={{marginRight:"-70px"}}>
                                             <Dropdown.Item>
                                                 <Item.Group>
