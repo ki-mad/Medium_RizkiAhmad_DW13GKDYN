@@ -52,7 +52,7 @@ export default class Header extends Component{
                                             </Dropdown.Item>
                                             <Dropdown.Item href="#" >Become a member</Dropdown.Item>
                                             <Dropdown.Item href="NewStory" text='New Story'/>
-                                            <Dropdown.Item text='Story'/>
+                                            <Dropdown.Item href='Stories' text='Stories'/>
                                             <Dropdown.Item text='Stats'/>
                                             <Dropdown.Divider />
                                             <Dropdown.Item text='Bookmarks'/>

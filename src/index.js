@@ -6,6 +6,7 @@ import Regis from './Regis';
 import Login from './Login';
 import Home from './Home';
 import NewStory from './Component/NewStory';
+import Stories from './Component/Stories';
 import CategoryPage from './CategoryPage';
 import ArticlePage from './ArticlePage';
 import CommentArticle from './Component/Comment';
@@ -24,6 +25,7 @@ ReactDOM.render(
             <Route path="/ArticlePage" component={ArticlePage}/>
             <Route path="/Comment" component={CommentArticle}/>
             <Route path="/NewStory" component={NewStory}/>
+            <Route path="/Stories" component={Stories}/>
         </div>
     </Router>
 ,document.getElementById('root'));
