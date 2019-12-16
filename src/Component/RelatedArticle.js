@@ -4,7 +4,6 @@ import Header from '../Header';
 import {Link} from 'react-router-dom';
 import '../css/Article.css';
 import CommentList from '../Component/CommentList'
-import G from 'glob';
 
 export default class RelatedArticle extends Component {
     render() {

@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
-import { Grid, Container, Button, Item, Responsive, Image} from 'semantic-ui-react'
-import Header from "../Header";
+import { Grid, Container, Button, Item, Responsive, Image, Icon, Tab} from 'semantic-ui-react'
+import Header from '../Header';
+import Follow from '../Component/Follow';
 
 export default class Profile extends Component{
     render() {
+        const panes = [
+            { menuItem: 'Tab 1', render: () => <Tab.Pane>dfdf</Tab.Pane> },
+            { menuItem: 'Tab 2', render: () => <Tab.Pane><Header/></Tab.Pane> },
+            { menuItem: 'Tab 3', render: () => <Tab.Pane><Follow/></Tab.Pane> },
+          ]
+
         return(
             <div>
                  <Container fluid  >
@@ -18,13 +25,17 @@ export default class Profile extends Component{
                             <Item.Group divided>
                                 <Item>
                                     <Item.Content>
-                                        
-                                        <Item.Header style={{fontSize:"30px"}}>Kimad<Button color="black" style={{marginLeft:"30px", verticalAlign:"top", paddingTop:"5px", paddingBottom:"5px"}} basic size="mini">Edit Profile</Button></Item.Header>
+                                        <Item.Header style={{fontSize:"30px", paddingBottom:"5%"}}>Ryan Holiday<Button color="black" style={{marginLeft:"30px", verticalAlign:"top", paddingTop:"5px", paddingBottom:"5px"}} basic color="green" size="mini">Follow</Button><Icon name="angle down"></Icon></Item.Header>
+                                        <Item.Description color="gray">Bestselling author of ‘Conspiracy,’ ‘Ego is the Enemy’ & ‘The Obstacle Is The Way’ http://amzn.to/24qKRWR</Item.Description>
                                         <Item.Meta>
-                                            1 Following
-                                        
+                                            <span style={{paddingRight:"2%"}}>
+                                                246k Following
+                                            </span>
+                                            <span style={{paddingRight:"2%"}}>
+                                                101k followers
+                                            </span>
+                                            <Icon name="twitter"></Icon>
                                         </Item.Meta>
-                                        {/* <Item.Description color="gray">Bestselling author of ‘Conspiracy,’ ‘Ego is the Enemy’ & ‘The Obstacle Is The Way’ http://amzn.to/24qKRWR</Item.Description> */}
                                     </Item.Content>
                                 </Item>
                             </Item.Group>
@@ -38,16 +49,11 @@ export default class Profile extends Component{
                                     </Item.Group>
                                 </Grid.Column>
                             </Responsive>
-                            <div style={{marginTop:"5%"}}>
-                            Kimad hasn’t been active on Medium yet. Check back later to see their stories, claps, and highlights.
-                            </div>
-                           
                         </Grid.Row>
-                       
-                        
-                       
-                    </Grid>
-                   
+                    </Grid>                  
+                 </Container>
+                 <Container>
+                    <Tab panes={panes} />
                  </Container>
             </div>
             

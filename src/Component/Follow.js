@@ -53,13 +53,12 @@ export default class Follow extends Component {
                             <Grid.Column width={12}>
                             <Item.Group divided>
                                 <Item>
-
                                     <Item.Image avatar src='https://miro.medium.com/fit/c/160/160/0*oxw8NBp_Td0n3l4_.png' size="small" />
                                     <Item.Content>
                                         <Item.Meta>
                                         <span className='cinema'>WRITTEN BY</span>
                                         </Item.Meta>
-                                        <Item.Header as='a'>Ryan Holiday</Item.Header>
+                                        <Item.Header ><Link to="/article_by_person">Ryan Holiday</Link></Item.Header>
                                         <Item.Description>Bestselling author of ‘Conspiracy,’ ‘Ego is the Enemy’ & ‘The Obstacle Is The Way’ http://amzn.to/24qKRWR</Item.Description>
                                         <Item.Extra>
                                         

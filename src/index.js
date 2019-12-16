@@ -10,7 +10,7 @@ import Stories from './Component/Stories';
 import Bookmarks from './Component/Bookmarks';
 import Stats from './Component/Stats';
 import Profile from './Component/Profile';
-// import Bookmarks from './Component/Bookmarks';
+import ArticleByPerson from './Component/ArticleByPerson';
 import CategoryPage from './CategoryPage';
 import ArticlePage from './ArticlePage';
 import CommentArticle from './Component/Comment';
@@ -33,6 +33,7 @@ ReactDOM.render(
             <Route path="/Bookmarks" component={Bookmarks}/>
             <Route path="/Stats" component={Stats}/>
             <Route path="/Profile" component={Profile}/>
+            <Route path="/article_by_person" component={ArticleByPerson}/>
         </div>
     </Router>
 ,document.getElementById('root'));
