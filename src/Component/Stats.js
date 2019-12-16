@@ -5,6 +5,26 @@ import Header from "../Header";
 export default class Stats extends Component{
     
     render() {
+        const panes = [
+          { menuItem: '0 (Views 30 Days)', render: () => <Tab.Pane>Tab 1 Content</Tab.Pane> },
+          { menuItem: '0 (Views 30 Days)', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
+          { menuItem: '0 (Views 30 Days)', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
+        ]
+
+        const panesbottom = [
+          {
+            menuItem: 'Tab 1',
+            render: () => <Tab.Pane attached={false}>Tab 1 Content</Tab.Pane>,
+          },
+          {
+            menuItem: 'Tab 2',
+            render: () => <Tab.Pane attached={false}>Tab 2 Content</Tab.Pane>,
+          },
+          {
+            menuItem: 'Tab 3',
+            render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane>,
+          },
+        ]
         return(
             <div>
                  <Container fluid  >
@@ -25,37 +45,21 @@ export default class Stats extends Component{
                          </Grid.Column>
                      </Grid>
                  </Container>
+                 <Container>
+                 <div style={{paddingLeft:"14px", fontSize:"20px", color:"gray"}}>
+                   <span style={{float:"left"}}>
+                    Click story below to view detailed stats
+                   </span>
+                   <span style={{float:"right"}}>
+                      Learn more about using stat
+                   </span>
+                 </div>
+                 </Container>
                  <Container style={{marginTop:"3%"}}>
-                 <Statistic.Group widths='four'>
-                    <Statistic>
-                      <Statistic.Value>22</Statistic.Value>
-                      <Statistic.Label>Saves</Statistic.Label>
-                    </Statistic>
-
-                    <Statistic>
-                      <Statistic.Value text>
-                        Three
-                        <br />
-                        Thousand
-                      </Statistic.Value>
-                      <Statistic.Label>Signups</Statistic.Label>
-                    </Statistic>
-
-                    <Statistic>
-                      <Statistic.Value>
-                        <Icon name='plane' />5
-                      </Statistic.Value>
-                      <Statistic.Label>Flights</Statistic.Label>
-                    </Statistic>
-
-                    <Statistic>
-                      <Statistic.Value>
-                        <Image src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' className='circular inline' />
-                        42
-                      </Statistic.Value>
-                      <Statistic.Label>Team Members</Statistic.Label>
-                    </Statistic>
-                  </Statistic.Group>
+                    <Tab panes={panes} style={{paddingLeft:"14px"}} />
+                 </Container>
+                 <Container style={{marginTop:"15%"}}>
+                  <Tab menu={{ secondary: true, pointing: true }} panes={panesbottom} style={{paddingLeft:"14px"}} />
                  </Container>
             </div>
             

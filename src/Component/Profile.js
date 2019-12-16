@@ -3,7 +3,6 @@ import { Grid, Container, Button, Item, Responsive, Image} from 'semantic-ui-rea
 import Header from "../Header";
 
 export default class Profile extends Component{
-    
     render() {
         return(
             <div>
