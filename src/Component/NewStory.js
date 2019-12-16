@@ -55,9 +55,9 @@ export default class NewStory extends Component{
                                                 <Dropdown.Item href="#" >Become a member</Dropdown.Item>
                                                 <Dropdown.Item href="NewStory" text='New Story'/>
                                                 <Dropdown.Item href='Stories' text='Stories'/>
-                                                <Dropdown.Item text='Stats'/>
+                                                <Dropdown.Item href='Stats' text='Stats'/>
                                                 <Dropdown.Divider />
-                                                <Dropdown.Item text='Bookmarks'/>
+                                                <Dropdown.Item href='Bookmarks' text='Bookmarks'/>
                                                 <Dropdown.Item text='Profile'/>
                                                 <Dropdown.Item text='Setting'/>
                                                 <Dropdown.Item text='Help'/>

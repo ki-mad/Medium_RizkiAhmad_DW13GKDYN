@@ -7,6 +7,9 @@ import Login from './Login';
 import Home from './Home';
 import NewStory from './Component/NewStory';
 import Stories from './Component/Stories';
+import Bookmarks from './Component/Bookmarks';
+import Stats from './Component/Stats';
+// import Bookmarks from './Component/Bookmarks';
 import CategoryPage from './CategoryPage';
 import ArticlePage from './ArticlePage';
 import CommentArticle from './Component/Comment';
@@ -26,6 +29,8 @@ ReactDOM.render(
             <Route path="/Comment" component={CommentArticle}/>
             <Route path="/NewStory" component={NewStory}/>
             <Route path="/Stories" component={Stories}/>
+            <Route path="/Bookmarks" component={Bookmarks}/>
+            <Route path="/Stats" component={Stats}/>
         </div>
     </Router>
 ,document.getElementById('root'));
