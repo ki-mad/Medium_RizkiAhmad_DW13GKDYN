@@ -81,7 +81,6 @@ export default class Follow extends Component {
                             <Grid.Column width={12}>
                             <Item.Group divided>
                                 <Item>
-
                                     <Item.Image avatar src='https://miro.medium.com/fit/c/160/160/0*oxw8NBp_Td0n3l4_.png' size="small" />
                                     <Item.Content>
                                         <Item.Meta>

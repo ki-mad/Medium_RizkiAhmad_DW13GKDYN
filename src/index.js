@@ -9,6 +9,7 @@ import NewStory from './Component/NewStory';
 import Stories from './Component/Stories';
 import Bookmarks from './Component/Bookmarks';
 import Stats from './Component/Stats';
+import Profile from './Component/Profile';
 // import Bookmarks from './Component/Bookmarks';
 import CategoryPage from './CategoryPage';
 import ArticlePage from './ArticlePage';
@@ -31,6 +32,7 @@ ReactDOM.render(
             <Route path="/Stories" component={Stories}/>
             <Route path="/Bookmarks" component={Bookmarks}/>
             <Route path="/Stats" component={Stats}/>
+            <Route path="/Profile" component={Profile}/>
         </div>
     </Router>
 ,document.getElementById('root'));

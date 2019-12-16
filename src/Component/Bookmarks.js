@@ -26,20 +26,19 @@ export default class Bookmarks extends Component{
                      </Grid>
                  </Container>
                  <Container style={{marginTop:"3%"}}>
-                    <Segment>
-                        <Grid>
-                            <Grid.Column floted="left" Divider vertical>
+                    <Segment style={{marginLeft:"14px", marginRight:"10%"}}>
+                        <Grid container columns={2}>
+                            <Grid.Column floted="left" width={1} style={{paddingLeft:"0px", marginLeft:"-10px"}}>
                                 <Icon size="big" name="bookmark"></Icon>
                             </Grid.Column>
-                            <Divider vertical></Divider>
+                            {/* <Divider vertical></Divider> */}
                             <Grid.Column width={12}>
                                 <h2><b>Offline Reading is here.</b></h2>
                             </Grid.Column>
-                            <Grid.Column width={2} style={{paddingLeft:"70px"}}>
+                            <Grid.Column width={3} floated="right" style={{paddingLeft:"50px", marginLeft:"-15px"}}>
                                 <Button color="black">Upgrade</Button>
                             </Grid.Column>
                         </Grid>
-                       
                     </Segment>
                  </Container>
             </div>
