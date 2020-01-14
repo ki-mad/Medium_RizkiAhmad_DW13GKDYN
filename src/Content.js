@@ -4,10 +4,34 @@ import MiniArtikel from './Component/MiniArtikel';
 import Bottomartikel from './Component/Bottomartikel';
 import Popular from './Component/Popular';
 import {Link} from 'react-router-dom';
+import { connect } from "react-redux";
+import {getArticles, getLatestArticles} from "./_actions/article";
 
-export default class Content extends Component {
+
+class Content extends Component {
+    constructor(props){
+        super(props);
+        // this.state = {
+        //     bottom_article: [],
+        //     popular: []
+        // };
+    }
+
+    componentDidMount() {
+        this.props.dispatch(getArticles());
+        this.props.dispatch(getLatestArticles());
+
+        // axios.get(`http://localhost:5000/api/v1/latest_article`).then(res => {
+        //   // this.setState({categories: res.data})
+        //   this.setState({ popular: res.data })
+        // })
+    }
+
     contextRef = createRef()
     render() {
+        const bottomarticle = this.props.article.dataArticle;
+        const popular = this.props.article.dataLatestArticle;
+        
         const miniartikel = [
             {
                id: 1,
@@ -32,129 +56,18 @@ export default class Content extends Component {
             },
         ]
 
-        const bottomartikel = [
-            {
-                id:1,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:2,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:3,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:4,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:5,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:6,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:7,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:8,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            }
-        ]
-
-        const popular = [
-            {
-                id:1,
-                number: "01",
-                title:" The Abusyrd Story Behind China's Biggest Bank Robbery",
-                penulis: "David Gauvey Herbert in Marker",
-                waktu : "Dec 4 - 28 min read"
-            },
-            {
-                id:2,
-                number: "02",
-                title:" The Abusyrd Story Behind China's Biggest Bank Robbery",
-                penulis: "David Gauvey Herbert in Marker",
-                waktu : "Dec 4 - 28 min read"
-            },
-            {
-                id:3,
-                number: "03",
-                title:" The Abusyrd Story Behind China's Biggest Bank Robbery",
-                penulis: "David Gauvey Herbert in Marker",
-                waktu : "Dec 4 - 28 min read"
-            },
-            {
-                id:4,
-                number: "04",
-                title:" The Abusyrd Story Behind China's Biggest Bank Robbery",
-                penulis: "David Gauvey Herbert in Marker",
-                waktu : "Dec 4 - 28 min read"
-            },
-            {
-                id:5,
-                number: "05",
-                title:" The Abusyrd Story Behind China's Biggest Bank Robbery",
-                penulis: "David Gauvey Herbert in Marker",
-                waktu : "Dec 4 - 28 min read"
-            }
-        ]
-
+       let number = 1;
+       
         return(
             <div>
-                <Grid columns={3} style={{paddingLeft:"15%", paddingRight:"15%", height:"350px"}}>
+                <Grid columns={3} style={{paddingLeft:"20%", paddingRight:"20%", height:"350px"}}>
                     <Grid.Row stretched>
                         <Grid.Column>
                             <article>
                                 <div className="Artikel1">
                                     <Image src="https://miro.medium.com/max/2000/1*-T8oo_JoKkMxfnPKLt_Ciw.jpeg" height="155vh" width="400vh"></Image>
                                 </div>
-                                <div className="postContent" style={{textAlign:"left", marginLeft:"88px"}}>
+                                <div className="postContent" style={{textAlign:"left", marginLeft:"70px"}}>
                                     <div className="titleClamp" >
                                         <Link to="/ArticlePage">
                                             <h3 style={{color:"black", fontSize:"22px"}}>If You Only Read A Few Books In 2018, Read These</h3>
@@ -250,16 +163,15 @@ export default class Content extends Component {
                                       <Rail>
                                         <Sticky context={this.contextRef}>
                                         <div style={{marginTop:"10%"}}>
-                                            <h3>Popular On Medium</h3>
+                                            <h3>Latest Article On Medium</h3>
                                             <Divider/>
                                         </div>
-                                        {popular.map(item => 
+                                        {popular.reverse().slice(0,6).map(item => 
                                                     <Popular
                                                         title={item.title}
-                                                        id={item.id}
-                                                        penulis={item.penulis}
-                                                        waktu={item.waktu}
-                                                        number={item.number}
+                                                        author={item.userId.fullname}
+                                                        time={item.time}
+                                                        number={number++}
                                                         />)}
                                         <div>
                                             <Divider/>
@@ -282,13 +194,14 @@ export default class Content extends Component {
                                 </Grid.Column>
                                 <Grid.Column width={10}>
                                 <Item.Group>
-                                    {bottomartikel.map(item => 
+                                    {bottomarticle.map(item => 
                                             <Bottomartikel
+                                                id={item.id}
                                                 title={item.title}
-                                                subtitle={item.subtitle}
-                                                info={item.info}
-                                                img={item.img}
+                                                content={item.content}
+                                                image={item.image}
                                                 waktu={item.waktu}
+                                                user={item.userId.fullname}
                                                 penulis={item.penulis}
                                                 />)}
                                 </Item.Group>
@@ -301,3 +214,11 @@ export default class Content extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+      article: state.article
+    };
+  };
+  
+export default connect(mapStateToProps)(Content);

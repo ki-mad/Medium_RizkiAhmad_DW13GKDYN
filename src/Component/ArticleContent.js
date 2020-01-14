@@ -12,11 +12,11 @@ export default class ArticleContent extends Component {
         return(
             <div>
                 <Grid  style={{color:"gray", textAlign:"center", alignContent:"center"}}>
-                    <Grid.Row >
+                    <Grid.Row style={{justifyContent:"center"}}>
                         <Responsive>
                             <figure>
-                                <Image src="https://miro.medium.com/max/2000/1*-T8oo_JoKkMxfnPKLt_Ciw.jpeg"></Image>
-                                <Link><u style={{color:"gray", textAlign:"center"}}>Books</u></Link>
+                                <Image style={{width:"2000", heigth:"1398", alignContent:"center", justifyContent:"center"}} src={this.props.image}></Image>
+                                {/* <Link><u style={{color:"gray", textAlign:"center"}}>Books</u></Link> */}
                             </figure>
                         </Responsive>
                         
@@ -55,7 +55,7 @@ export default class ArticleContent extends Component {
                     <Grid style={{marginLeft:"18%", marginRight:"18%"}}>
                         <Grid.Row>
                                 <div style={style.style}>
-                                        <p>If you'd liked <a href="https://thoughtcatalog.com/ryan-holiday/2016/10/37-wise-life-changing-lessons-from-the-ancient-stoics/" target="#">to be jerked around less</a>, provoked less, and&nbsp;<a href="https://thoughtcatalog.com/ryan-holiday/2015/02/33-ways-to-be-an-insanely-productive-happy-balanced-person/" target="#">more productive and inwardly focused</a>, where should you start?</p>
+                                        {/* <p>If you'd liked <a href="https://thoughtcatalog.com/ryan-holiday/2016/10/37-wise-life-changing-lessons-from-the-ancient-stoics/" target="#">to be jerked around less</a>, provoked less, and&nbsp;<a href="https://thoughtcatalog.com/ryan-holiday/2015/02/33-ways-to-be-an-insanely-productive-happy-balanced-person/" target="#">more productive and inwardly focused</a>, where should you start?</p>
 
                                         <p>To me, the answer is obvious: by turning to wisdom. Below is a list of 21 books that will help lead you to a better, stronger 2018.</p>
 
@@ -101,7 +101,8 @@ export default class ArticleContent extends Component {
                                         <p><a href="https://mailchi.mp/ryanholiday.net/15books" target="#">Get the secret book list here!</a></p>
 
                                         <hr />
-                                        <p><em>This originally appeared on&nbsp;</em><a href="https://thoughtcatalog.com/ryan-holiday/2016/12/if-you-only-read-a-few-books-in-2017-read-these/" target="#"><em>Thought Catalog</em></a><em>.</em></p>
+                                        <p><em>This originally appeared on&nbsp;</em><a href="https://thoughtcatalog.com/ryan-holiday/2016/12/if-you-only-read-a-few-books-in-2017-read-these/" target="#"><em>Thought Catalog</em></a><em>.</em></p> */}
+                                {this.props.content}
                                 </div>
                         </Grid.Row>
                     </Grid>

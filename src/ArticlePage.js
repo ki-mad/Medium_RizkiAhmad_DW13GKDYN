@@ -5,10 +5,32 @@ import {Link} from 'react-router-dom';
 import ArticleContent from './Component/ArticleContent';
 import Follow from './Component/Follow';
 import RelatedArticle from './Component/RelatedArticle';
+import { connect } from 'react-redux';
+import { getArticlePage } from "./_actions/articlePage"
 
-export default class ArticlePage extends Component{
+class ArticlePage extends Component{
+    constructor(props) {
+        super(props);
+        // this.state = {
+        //     article_content: []
+        // }
+    }
+
+    componentDidMount() {
+        const id = this.props.match.params.id;
+        // axios.get(`http://localhost:5000/api/v1/articleComment/${id}`).then(res => {
+        //     this.setState({ article_content: res.data })   
+        // }
+        // )
+
+        this.props.dispatch(getArticlePage(id));
+    }
+    
 
      render() {
+         const article_content = this.props.articlePage.dataArticlePage;
+        //  const ids = this.props.category_id
+        console.log(article_content)
          return(
             <div>
                  <Container fluid  >
@@ -36,14 +58,30 @@ export default class ArticlePage extends Component{
                                 </Responsive>
                             </Container>
                         </div>
-                        <Container>
-                            <ArticleContent/>
+                        <Container> 
+                                <ArticleContent
+                                image={article_content.image}
+                                content={article_content.content}
+                                />
                             <Follow/>
                         </Container>
-                        <RelatedArticle/>
+                        {article_content.category_id && <RelatedArticle
+                                categoryid = {article_content.category_id}
+                            />}
+                            
+                                {/* {console.log(article_content.id)} */}
+
                      </div>
                  </Container>
             </div>
          );
      }
  }
+
+ const mapStateToProps = state => {
+    return {
+      articlePage: state.articlePage
+    };
+  }
+
+export default connect(mapStateToProps)(ArticlePage);

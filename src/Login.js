@@ -57,19 +57,20 @@ export default class Login extends Component{
         localStorage.setItem('user', JSON.stringify(nextState));
     }
     
-    state = { show: false };
+    state = {open:false}
 
-    showModal = () => {
-        this.setState({ show: true });
-    };
-
-    hideModal = () => {
-        this.setState({ show: false });
-    };
+    open = () => this.setState({ open: true })
+    close = () => this.setState({ open: false })
 
      render() {
+        const { open } = this.state
          return(
-          <Modal trigger={<Link>Sign in</Link>} closeIcon>
+          <Modal
+          open={open}
+                onOpen={this.open}
+                onClose={this.close}
+          trigger={<Link>Sign in</Link>} closeIcon>
+               
                   <div >
                       <div style={style.flex}>
                           <div style={style.midflex}>
@@ -83,7 +84,7 @@ export default class Login extends Component{
                                 <div>
                                     <Form onSubmit={this.onSubmit} style={{padding:"25px"}}>
                                         <Form.Field>
-                                            <input placeholder='Your E-mail' type='text' value={this.state.email} onChange={this.onChangeEmail}/>
+                                            <input placeholder='E-mail' type='email' value={this.state.email} onChange={this.onChangeEmail}/>
                                         </Form.Field>
                                         <Form.Field>
                                             <input placeholder='Password' type='password' value={this.state.password} onChange={this.onChangePassword}/>
@@ -93,7 +94,8 @@ export default class Login extends Component{
                                 </div>
                                 <div>
                                   <p style={{padding:"15px"}}>
-                                    <Link to="/Home" style={{color:'green'}} onClick={this.hideModal}><Icon name='angle left' />All Sign in options</Link>
+                                    <Link style={{color:'green'}} onClick={this.close}><Icon name='angle left' />All Sign in options</Link>
+                                    {/* <Button style={{color:'green'}} onClick={this.hideModal}><Icon name='angle left' />All Sign in option</Button> */}
                                   </p>
                                 </div>
                               </div>

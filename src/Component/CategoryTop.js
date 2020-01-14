@@ -8,7 +8,8 @@ export default class CategoryTop extends Component {
             <Grid columns={3} style={{height:"180px", marginLeft:"20%", marginRight:"15%"}}> 
                  <Grid.Row style={{padding:"40px 40px"}}>
                         <Grid.Column style={{width:"270px", position:"bottom"}}>
-                                <Image src="https://miro.medium.com/max/540/1*cw32fIqCbRWzwJaoQw6BUg.png" width="270" height="61"></Image> 
+                                {/* <Image src="https://miro.medium.com/max/540/1*cw32fIqCbRWzwJaoQw6BUg.png" width="270" height="61"></Image>  */}
+                                <h1 style={{fontSize:"49px"}}>{this.props.category_name}</h1>
                         </Grid.Column>
                         <Grid.Column style={{textAlign:"left", width:"490px"}}>
                             <div style={{display: "flex", marginBottom:"auto", marginTop:"8px"}}>

@@ -12,7 +12,7 @@ export default class CategoryMid extends Component {
                             <Image src= {this.props.img1} height="354px" width="693.867px"></Image> 
                         </Grid.Column >
 
-                        <Grid.Column  width={6} color={this.props.warna1} style={{margin:"0px 0px", alignItem:"center", justifyContent:"center"}}>
+                        <Grid.Column  width={6} color={this.props.warna1} style={{margin:"0px 0px", alignItem:"center", textAlign:"center"}}>
                             <div style={{paddingTop:"50px", marginBottom:"24px", paddingRight:"40px", paddingLeft:"40px"}}>
                                <div style={{marginBottom:"8px"}}>
                                     <Link to="#">
@@ -34,7 +34,7 @@ export default class CategoryMid extends Component {
 
                     <Grid.Row columns={2} style={{height:"382px", maxWidth: "1192px"}}>
 
-                        <Grid.Column  color={this.props.warna2} width={6} style={{padding:"0px", margin:"0px 0px", alignItem:"center", justifyContent:"center"}}>
+                        <Grid.Column  color={this.props.warna2} width={6} style={{padding:"0px", margin:"0px 0px", alignItem:"center", justifyContent:"center", textAlign:"center"}}>
                             <div style={{paddingTop:"50px", marginTop:"50px", marginBottom:"24px", paddingRight:"40px", paddingLeft:"40px"}}>
                                 <div style={{marginBottom:"8px"}}>
                                         <Link to="#">

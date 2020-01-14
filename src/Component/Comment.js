@@ -84,7 +84,7 @@ export default class CommentArticle extends Component{
                                             </Grid.Column>
                                             <Grid.Column>
                                                 <Form reply style={{marginTop:"2%"}}>
-                                                    <Form.TextArea />
+                                                    <Form.TextArea style={{border:"none"}} />
                                                     <Button content='Add Reply' labelPosition='left' icon='edit' basic color="green" />
                                                     {/* <Button content='Go Full Scr' labelPosition='left'  basic color="green" /> */}
                                                 </Form>

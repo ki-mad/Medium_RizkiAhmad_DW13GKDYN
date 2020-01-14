@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Item, Grid, Divider} from 'semantic-ui-react'
+import {Item, Grid, Divider} from 'semantic-ui-react';
+import Moment from 'react-moment';
+import {Link} from 'react-router-dom';
 
 export default class CategoryArtikel extends Component {
     render(){
@@ -14,12 +16,12 @@ export default class CategoryArtikel extends Component {
                                 <Item.Group divided unstackable style={{textAlign:"left"}}>
                                     <Item>
                                         <Item.Content>
-                                            <Item.Header as='a'>{this.props.title}</Item.Header>
+                                            <Item.Header><Link style={{color:"black"}} to={`article/${this.props.id}`}>{this.props.title}</Link></Item.Header>
                                             <Item.Meta>{this.props.subtitle}</Item.Meta>
                                             <Item.Description>
-                                                {this.props.penulis}
+                                                {this.props.author}
                                             </Item.Description>
-                                            <Item.Extra>{this.props.waktu}</Item.Extra>
+                                            <Item.Extra><Moment format="MMM DD, YYYY">{this.props.waktu}</Moment></Item.Extra>
                                         </Item.Content>
                                         <Item.Image src={this.props.img} />
                                     </Item>

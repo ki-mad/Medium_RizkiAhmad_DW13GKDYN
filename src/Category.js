@@ -2,34 +2,23 @@ import React, {Component} from 'react';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import './App.css';
 import {Link} from 'react-router-dom';
+import { connect } from "react-redux";
+import { getCategories } from "./_actions/category";
 
-const list = [
-    { name: 'HOME', url:'/Home'},
-    { name: 'ONEZERO', url:'/CategoryPage'}, 
-    { name: 'ELEMENTAL', url:'/Regis'},
-    { name: 'GEN', url:'/'}, 
-    { name: 'ZORA', url:'/'}, 
-    { name: 'FORGE', url:'/'},
-    { name: 'HUMAN', url:'/'}, 
-    { name: 'PARTS', url:'/'}, 
-    { name: 'MARKER', url:'/'},
-    { name: 'LEVEL', url:'/'}, 
-    { name: 'HEATED', url:'/'}, 
-    { name: 'MODUS', url:'/'}, 
-    { name: 'MORE', url:'/'}
-];
 
-const MenuItem = ({text, selected}) => {
+const MenuItem = ({text, selected, url}) => {
     return <div
       className={`menu-item ${selected ? 'active' : ''}`}
       >{text}</div>;
   };
-
-export const Menu = (list, selected) => list.map(el => {
+  
+export const Menu = (category, selected) => category.map(el => {
     const {name} = el;
-    const {url} = el;
-
-    return <Link to={url}><MenuItem text={name} key={name} selected={selected}></MenuItem></Link>;
+    if(el.id === 0){
+        return <Link to={'/Home'}><MenuItem text={name} key={name} selected={selected}></MenuItem></Link>;
+    }else{
+        return <Link to={`category_page/${el.id}/article`}><MenuItem text={name} key={name} selected={selected}></MenuItem></Link>;
+    }
 });
 
 const Arrow = ({ text, className}) => {
@@ -43,29 +32,35 @@ const ArrowRight = Arrow({ text: '>', className: 'arrow-next'});
 
 const selected = 'HOME';
 
-export default class Category extends Component {
+class Category extends Component {
     constructor(props) {
         super(props);
-        this.menuItems = Menu(list, selected);
+        // this.menuItems = Menu(list, selected);
     }
 
     state = {
-        selected
+        selected,
+        // category: this.props.category.category
     };
+
+    componentDidMount() {
+        this.props.dispatch(getCategories());
+      }
 
     onSelect = key => {
         this.setState({ selected: key});
     }
 
     render() {
-        const {selected} = this.state;
+        const {selected} = this.state; 
+        const category = this.props.category.dataCategory;
 
-        const menu = this.menuItems;
+        // const menu = this.menuItems;
 
         return (
             <div className="Category">
                 <ScrollMenu
-                    data={menu}
+                    data={Menu(category, selected)}
                     arrowLeft={ArrowLeft}
                     arrowRight={ArrowRight}
                     selected={selected}
@@ -75,3 +70,11 @@ export default class Category extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+      category: state.category
+    };
+  };
+  
+export default connect(mapStateToProps)(Category);

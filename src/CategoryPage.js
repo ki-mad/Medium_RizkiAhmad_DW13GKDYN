@@ -6,10 +6,30 @@ import CategoryTop from './Component/CategoryTop';
 import CategoryMid from './Component/CategoryMid';
 import CategoryBottom from './Component/CategoryBottom';
 import CategoryArtikel from './Component/CategoryArtikel';
+import { connect } from 'react-redux';
+import { getCategoryPage } from "./_actions/categoryPage"
 
-export default class CategoryPage extends Component{
+class CategoryPage extends Component{
+
+    constructor(props){
+        super(props);
+        // this.state = {
+        //     category_article : []
+        // };
+    }
+
+    componentDidMount() {
+        const id = this.props.match.params.id;
+        // axios.get(`http://localhost:5000/api/v1/article/${id}`).then(res => {
+        //   this.setState({ category_article: res.data })
+        //   alert(id);
+        // })
+        this.props.dispatch(getCategoryPage(id));
+
+      }
 
      render() {
+        const category_article = this.props.categoryPage.dataCategoryPage;
         const categorymid = [
             {
                 id:1,
@@ -43,80 +63,6 @@ export default class CategoryPage extends Component{
             }
         ]
 
-        const categoryartikel = [
-            {
-                id:1,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://miro.medium.com/max/756/1*uNgmHEUZHeBejN0JKd_m8A.gif"
-            },
-            {
-                id:2,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://miro.medium.com/max/756/1*uNgmHEUZHeBejN0JKd_m8A.gif"
-            },
-            {
-                id:3,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://miro.medium.com/max/756/1*uNgmHEUZHeBejN0JKd_m8A.gif"
-            },
-            {
-                id:4,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:5,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:6,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:7,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            },
-            {
-                id:8,
-                info:"BASED ON YOUR READING HISTORY",
-                title:"Concepts to become an advanced React Developer",
-                subtitle:"Increase you react level by using these techniques!",
-                penulis:"Dhanraj Acharya in wineofbits",
-                waktu:"Feb 19 2017 - 7 min read",
-                img: "https://cdn-images-1.medium.com/fit/c/152/156/1*hNRK_zr3qrTORJXD3pwuZA.png"
-            }
-        ]
          return(
              <div>
                  <Container fluid  >
@@ -126,7 +72,12 @@ export default class CategoryPage extends Component{
                  </Container>
                  <Container fluid style={{marginTop:"15px"}}>
                      <Container fluid >
-                        <CategoryTop/>
+                         {category_article.slice(0,1).map(item =>
+                            <CategoryTop
+                            category_name = {item.categoryId.name}
+                            />
+                            )}
+                        
                         {categorymid.map(item => 
                         <CategoryMid
                             title1={item.title1}
@@ -145,20 +96,26 @@ export default class CategoryPage extends Component{
                         <CategoryBottom/>
                  </Container>
                  <Container fluid>
-                        {categoryartikel.map(item => 
+                        {category_article.map(item =>
                         <CategoryArtikel
                             title={item.title}
-                            subtitle={item.subtitle}
-                            img={item.img}
-                            waktu={item.waktu}
-                            penulis={item.penulis}
+                            subtitle={item.content}
+                            img={item.image}
+                            waktu={item.createdAt}
+                            author={item.userId.fullname}
                         />)}
                         <Footer/>
                  </Container>
                  </Container>
-                 
-                       
             </div>
          );
      }
  }
+
+ const mapStateToProps = state => {
+    return {
+      categoryPage: state.categoryPage
+    };
+  };
+  
+export default connect(mapStateToProps)(CategoryPage);
